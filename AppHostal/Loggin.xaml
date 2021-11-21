@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHostal.Loggin"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout>
+
+        <Image Source="HospedajelaIsla.png" WidthRequest="135" HeightRequest="135"/>
+
+        <Entry x:Name="txtusuario" Placeholder="Ingrese su Usuario"/>
+        <Entry x:Name="txtcontraseña" Placeholder="Ingrese su Contraseña" IsPassword="True"/>
+        <Button x:Name="btnAbrir" Text="Ingresar" Clicked="btnAbrir_Clicked"/>
+        <Label x:Name="lblMensaje" Text="" TextColor="Red"/>
+
+        <ListView x:Name="MyListView" ItemSelected="MyListView_ItemSelected" IsVisible="false">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label x:Name="lblusuario" Text="{Binding nom_usuario}"></Label>
+                            <Label x:Name="lblpass" Text="{Binding pass_usuario}"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+</ContentPage>

@@ -10,7 +10,7 @@ namespace AppHostal
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Loggin());
         }
 
         protected override void OnStart()

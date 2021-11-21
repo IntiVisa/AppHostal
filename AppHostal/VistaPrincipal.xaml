@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHostal.VistaPrincipal"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+            <Label Text="Bienvenido al Hospedaje la Isla !" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
+        </Frame>
+        
+        <Image Source="Yahuarcocha.jpg" WidthRequest="135" HeightRequest="135"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Button x:Name="btnRegistro" Text="Registro" Clicked="btnRegistro_Clicked" Grid.Row="0" Grid.Column="0"/>
+            <Button x:Name="btnHabitaciones" Text="Habitaciones" Clicked="btnHabitaciones_Clicked" Grid.Row="0" Grid.Column="1"/>
+            <Button x:Name="btn1" Text="Reg"  Grid.Row="1" Grid.Column="0"/>
+            <Button x:Name="btn2" Text="Vista"  Grid.Row="1" Grid.Column="1"/>
+        </Grid>
+        
+    </StackLayout>
+
+</ContentPage>

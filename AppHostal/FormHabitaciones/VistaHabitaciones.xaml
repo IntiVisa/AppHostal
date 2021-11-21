@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHostal.VistaHabitaciones"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="5" >
+                <Label Text="Registro Habitaciones" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
+            </Frame>
+
+            <ListView x:Name="ListaHabitaciones" ItemSelected="ListaHabitaciones_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label x:Name="lblCodigo" Text="{Binding id_habitacion}" Grid.Row="0" Grid.Column="0"/>
+                                <Label x:Name="lblTHabitacion" Text="{Binding id_tipo_habitacion}" Grid.Row="0" Grid.Column="1"/>
+                                <Label x:Name="lblHabitacion" Text="{Binding nro_habitacion}" Grid.Row="0" Grid.Column="2"/>
+                                <Label x:Name="lblPrecio" Text="{Binding precio_dia}" Grid.Row="1" Grid.Column="1"/>
+                                <Label x:Name="lblEstado" Text="{Binding estado}" Grid.Row="1" Grid.Column="2"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnRegistrar" Text="Registrar" Clicked="btnRegistrar_Clicked" Grid.Row="0" Grid.Column="0"/>
+                <Button x:Name="btnActualizar" Text="Actualizar" Clicked="btnActualizar_Clicked" Grid.Row="0" Grid.Column="1"/>
+                <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" Grid.Row="1" Grid.Column="0"/>
+                <Button x:Name="btnRegresar" Text="Home" Clicked="btnRegresar_Clicked" Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
