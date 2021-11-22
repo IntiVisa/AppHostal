@@ -8,8 +8,8 @@ namespace AppHostal.Datos
     {
         public int id_reservacion { get; set; }
         public int id_persona { get; set; }
-        public System.DateTime fInicioReserva { get; set; }
-        public System.DateTime fFinReserva { get; set; }
+        public DateTime fInicioReserva { get; set; }
+        public DateTime fFinReserva { get; set; }
         public int id_habitacion { get; set; }
         public int num_adultos { get; set; }
         public int num_ninios { get; set; }
