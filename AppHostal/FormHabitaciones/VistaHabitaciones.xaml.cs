@@ -39,7 +39,7 @@ namespace AppHostal
             }
             catch (Exception ex)
             {
-                DisplayAlert("Error", "Error" + ex.Message, "OK");
+                await DisplayAlert("Error", "Error" + ex.Message, "OK");
             }
         }
 

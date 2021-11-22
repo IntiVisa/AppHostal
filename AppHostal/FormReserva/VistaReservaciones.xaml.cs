@@ -45,24 +45,79 @@ namespace AppHostal.FormReserva
 
         }
 
-        private void btnRegistrar_Clicked(object sender, EventArgs e)
+        private async void btnRegistrar_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new RegistroRe());
         }
 
-        private void btnActualizar_Clicked(object sender, EventArgs e)
+        private async void btnActualizar_Clicked(object sender, EventArgs e)
         {
+            try
+            {
+                var obj = (Datos.DReservaciones)ListaRegistro.SelectedItem;
+                var itemR = obj.id_reservacion.ToString();
+                var itemP = obj.id_persona.ToString();
+                var itemFi = obj.fInicioReserva.ToString();
+                var itemFf = obj.fFinReserva.ToString();
+                var itemH = obj.id_habitacion.ToString();
+                var itemA = obj.num_adultos.ToString();
+                var itemN = obj.num_ninios.ToString();
+                var itemM = obj.monto_reserva.ToString();
+
+                int cod = Convert.ToInt32(itemR);
+                int per = Convert.ToInt32(itemP);
+                DateTime fin = Convert.ToDateTime(itemFi);
+                DateTime ffin = Convert.ToDateTime(itemFf);
+                int hab = Convert.ToInt32(itemH);
+                int adul = Convert.ToInt32(itemA);
+                int nin = Convert.ToInt32(itemN);
+                double mont = Convert.ToDouble(itemM);
+
+                ListaRegistro.ItemsSource = _post;
+                await Navigation.PushAsync(new ActualizacionRe(cod,per,fin,ffin,hab,adul,nin,mont));
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", "Debe seleccionar un registro ha Actualizar", "OK");
+            }
 
         }
 
         private void btnEliminar_Clicked(object sender, EventArgs e)
         {
+            try
+            {
+                var obj = (Datos.DReservaciones)ListaRegistro.SelectedItem;
+                var itemR = obj.id_reservacion.ToString();
+                var itemP = obj.id_persona.ToString();
+                var itemFi = obj.fInicioReserva.ToString();
+                var itemFf = obj.fFinReserva.ToString();
+                var itemH = obj.id_habitacion.ToString();
+                var itemA = obj.num_adultos.ToString();
+                var itemN = obj.num_ninios.ToString();
+                var itemM = obj.monto_reserva.ToString();
 
+                int cod = Convert.ToInt32(itemR);
+                int per = Convert.ToInt32(itemP);
+                DateTime fin = Convert.ToDateTime(itemFi);
+                DateTime ffin = Convert.ToDateTime(itemFf);
+                int hab = Convert.ToInt32(itemH);
+                int adul = Convert.ToInt32(itemA);
+                int nin = Convert.ToInt32(itemN);
+                double mont = Convert.ToDouble(itemM);
+
+                ListaRegistro.ItemsSource = _post;
+                //await Navigation.PushAsync(new EliminarRe(cod, per, fin, ffin, hab, adul, nin, mont));
+            }
+            catch (Exception ex)
+            {
+                //await DisplayAlert("Error", "Debe seleccionar un registro ha Actualizar", "OK");
+            }
         }
 
-        private void btnRegresar_Clicked(object sender, EventArgs e)
+        private async void btnRegresar_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new VistaPrincipal());
         }
     }
 }

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHostal.FormReserva.RegistroRe"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Frame BackgroundColor="#2196F3" Padding="5" >
+                <Label Text="Registro Reservaciones" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
+            </Frame>
+
+            <Entry x:Name="txtPersona" Placeholder="Ingrese ID Persona" Keyboard="Text"/>
+            <DatePicker x:Name="dtpFInicio" Format="yyyy-MM-dd"/>
+            <DatePicker x:Name="dtpFFin" Format="yyyy-MM-dd"/>
+            <Entry x:Name="txtHabitacion" Placeholder="Ingrese la Habitacion" Keyboard="Numeric"/>
+            <Entry x:Name="txtAdultos" Placeholder="Ingrese el Número de Adultos" Keyboard="Numeric"/>
+            <Entry x:Name="txtNinios" Placeholder="Ingrese el Número de Niños" Keyboard="Numeric"/>
+            <Entry x:Name="txtMontoR" Placeholder="Ingrese el Monto Reserva" Keyboard="Numeric"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnRegistrar" Text="Registrar" Clicked="btnRegistrar_Clicked" Grid.Row="0" Grid.Column="0"/>
+                <Button x:Name="btnRegresar" Text="Regresar" Clicked="btnRegresar_Clicked" Grid.Row="0" Grid.Column="1"/>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
