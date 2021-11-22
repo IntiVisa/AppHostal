@@ -9,7 +9,6 @@
                 <Label Text="Registro Habitaciones" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
             </Frame>
 
-            <Entry x:Name="txtCodigo" Placeholder="Ingrese el codigo" IsEnabled="False" />
             <Entry x:Name="txtHabitacion" Placeholder="Seleccione una habitacion"/>
             <Entry x:Name="txtNHabitacion" Placeholder="Num Habitacion"/>
             <Entry x:Name="txtPrecioDia" Placeholder="Precio Dia"/>

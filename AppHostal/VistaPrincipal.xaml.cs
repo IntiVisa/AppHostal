@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppHostal.FormReserva;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -23,6 +24,11 @@ namespace AppHostal
         private async void btnHabitaciones_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new VistaHabitaciones());
+        }
+
+        private async void btnReservaciones_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new VistaReservaciones());
         }
     }
 }

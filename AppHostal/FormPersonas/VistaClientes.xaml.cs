@@ -51,15 +51,75 @@ namespace AppHostal
             await Navigation.PushAsync(new RegistrarCli());
         }
 
-        private void btnActualizar_Clicked(object sender, EventArgs e)
+        private async void btnActualizar_Clicked(object sender, EventArgs e)
         {
+            try
+            {
+                var obj = (Datos.DPersonas)ListaPersonas.SelectedItem;
+                var itemP = obj.id_persona.ToString();
+                var itemN = obj.nombre.ToString();
+                var itemA = obj.apellido.ToString();
+                var itemI = obj.id_identificacion.ToString();
+                var itemID = obj.identificacion.ToString();
+                var itemD = obj.direccion.ToString();
+                var itemCe = obj.celular.ToString();
+                var itemCo = obj.correo.ToString();
+                var itemE = obj.estado.ToString();
+
+                int cod = Convert.ToInt32(itemP);
+                string nom = Convert.ToString(itemN);
+                string ape = Convert.ToString(itemA);
+                int idn = Convert.ToInt32(itemI);
+                string ident = Convert.ToString(itemID);
+                string dir = Convert.ToString(itemD);
+                string cel = Convert.ToString(itemCe);
+                string corr = Convert.ToString(itemCo);
+                string est = Convert.ToString(itemE);
+
+                ListaPersonas.ItemsSource = _post;
+                await Navigation.PushAsync(new ActualizarCli(cod, nom, ape, idn, ident, dir, cel, corr, est));
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", "Debe seleccionar un registro ha Actualizar", "OK");
+            }
 
         }
 
-        private void btnEliminar_Clicked(object sender, EventArgs e)
+        private async void btnEliminar_Clicked(object sender, EventArgs e)
         {
+            try
+            {
+                var obj = (Datos.DPersonas)ListaPersonas.SelectedItem;
+                var itemP = obj.id_persona.ToString();
+                var itemN = obj.nombre.ToString();
+                var itemA = obj.apellido.ToString();
+                var itemI = obj.id_identificacion.ToString();
+                var itemID = obj.identificacion.ToString();
+                var itemD = obj.direccion.ToString();
+                var itemCe = obj.celular.ToString();
+                var itemCo = obj.correo.ToString();
+                var itemE = obj.estado.ToString();
 
+                int cod = Convert.ToInt32(itemP);
+                string nom = Convert.ToString(itemN);
+                string ape = Convert.ToString(itemA);
+                int idn = Convert.ToInt32(itemI);
+                string ident = Convert.ToString(itemID);
+                string dir = Convert.ToString(itemD);
+                string cel = Convert.ToString(itemCe);
+                string corr = Convert.ToString(itemCo);
+                string est = Convert.ToString(itemE);
+
+                ListaPersonas.ItemsSource = _post;
+                await Navigation.PushAsync(new EliminarCli(cod, nom, ape, idn, ident, dir, cel, corr, est));
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", "Debe seleccionar un registro ha Actualizar", "OK");
+            }
         }
+
         private async void ListaPersonas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
 

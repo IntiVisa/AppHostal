@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHostal.FormPersonas.EliminarCli"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Frame BackgroundColor="#2196F3" Padding="5" >
+                <Label Text="Eliminar Persona" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
+            </Frame>
+
+            <Entry x:Name="txtCodigo" Placeholder="Ingrese el codigo" IsEnabled="False"/>
+            <Entry x:Name="txtNombre" Placeholder="Ingrese el Nombre"/>
+            <Entry x:Name="txtApellido" Placeholder="Ingrese el Apellido"/>
+            <Entry x:Name="txtTipoIden" Placeholder="Ingrese el tipo Identificacion" IsVisible="false"/>
+            <Entry x:Name="txtIdentificacion" Placeholder="Ingrese el Nro Identificacion"/>
+            <Entry x:Name="txtDireccion" Placeholder="Ingrese la Direccion"/>
+            <Entry x:Name="txtCelular" Placeholder="Ingrese el Celular"/>
+            <Entry x:Name="txtCorreo" Placeholder="Ingrese el Correo"/>
+            <Entry x:Name="txtEstado" Placeholder="Ingrese el Estado"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" Grid.Row="0" Grid.Column="0"/>
+                <Button x:Name="btnRegresar" Text="Regresar" Clicked="btnRegresar_Clicked" Grid.Row="0" Grid.Column="1"/>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

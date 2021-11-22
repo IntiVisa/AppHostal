@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHostal.FormReserva.VistaReservaciones"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Frame BackgroundColor="#2196F3" Padding="5" >
+                <Label Text="Registro de Clientes" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
+            </Frame>
+
+            <ListView x:Name="ListaRegistro" ItemSelected="ListaRegistro_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="90"/>
+                                    <ColumnDefinition Width="90"/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label x:Name="lblCodigo" Text="{Binding id_reservacion}" Grid.Row="0" Grid.Column="0" TextColor="Green"/>
+                                <Label x:Name="lblPersona" Text="{Binding id_persona}" Grid.Row="0" Grid.Column="1"/>
+                                <Label x:Name="lblReservaI" Text="{Binding fInicioReserva}" Grid.Row="0" Grid.Column="2" TextColor="DarkCyan"/>
+                                <Label x:Name="lblReservaF" Text="{Binding fFinReserva}" Grid.Row="0" Grid.Column="3" TextColor="DarkOrchid"/>
+                                <Label x:Name="lblHabitacion" Text="{Binding id_habitacion}" Grid.Row="0" Grid.Column="4"/>
+                                <Label x:Name="lblAdultos" Text="{Binding num_adultos}" Grid.Row="1" Grid.Column="2"/>
+                                <Label x:Name="lblNinios" Text="{Binding num_ninios}"  Grid.Row="1" Grid.Column="3"/>
+                                <Label x:Name="lblMontoR" Text="{Binding monto_reserva}"  Grid.Row="1" Grid.Column="4"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnRegistrar" Text="Registrar" Clicked="btnRegistrar_Clicked" Grid.Row="0" Grid.Column="0"/>
+                <Button x:Name="btnActualizar" Text="Actualizar" Clicked="btnActualizar_Clicked" Grid.Row="0" Grid.Column="1"/>
+                <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" Grid.Row="1" Grid.Column="0"/>
+                <Button x:Name="btnRegresar" Text="Home" Clicked="btnRegresar_Clicked" Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

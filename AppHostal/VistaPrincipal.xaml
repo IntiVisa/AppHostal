@@ -23,8 +23,8 @@
             
             <Button x:Name="btnRegistro" Text="Registro" Clicked="btnRegistro_Clicked" Grid.Row="0" Grid.Column="0"/>
             <Button x:Name="btnHabitaciones" Text="Habitaciones" Clicked="btnHabitaciones_Clicked" Grid.Row="0" Grid.Column="1"/>
-            <Button x:Name="btn1" Text="Reg"  Grid.Row="1" Grid.Column="0"/>
-            <Button x:Name="btn2" Text="Vista"  Grid.Row="1" Grid.Column="1"/>
+            <Button x:Name="btnReservaciones" Text="Reservaciones" Clicked="btnReservaciones_Clicked"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+            
         </Grid>
         
     </StackLayout>
